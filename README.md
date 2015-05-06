@@ -1,6 +1,8 @@
 # nix_configs
 The set of linx/osx terminal configs I like to use.
 
+This repo depends on Vundle.vim as a submodule. The correct way to clone the repo is: `git clone --recursive git@github.com:Lemmons/nix_configs.git`.  If you have already cloned the repo, then `git submodule init; git submodule update` will get you to the correct state.
+
 To use simply copy symlink the desired config to your home directory.
 The files will need to be prefixed with `.` to work, and also might need some renaming, depending on your environment,
 such as `ln -s ~/src/nix_configs/bashrc_mac ~/.profile`.
