@@ -1,0 +1,8 @@
+[alias]
+    co = checkout
+    ci = commit -v
+[core]
+	editor = /usr/bin/vim
+	excludesfile = ~/.gitignore_global
+[push]
+	default = current
