@@ -7,3 +7,5 @@ such as `ln -s ~/src/nix_configs/bashrc_mac ~/.profile`.
 
 Also, there is a lot of interdependency between them, so if you want to use one part only,
 you might need to do a bit of modification to that script.
+
+You also might need to install a newer version of vim. On mac this can be done with `brew install vim --override-system-vim --HEAD`.
