@@ -76,6 +76,9 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+" make copy/paste go to the clipboard
+:set clipboard=unnamed
+
 " change swap directory
 set directory=~/.backup,/tmp
 set backupdir=~/.backup,/tmp
