@@ -18,6 +18,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Align'
 Plugin 'mxw/vim-jsx'
+Plugin 'vim-scripts/openscad.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,6 +47,11 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " add line numbers to vim display
 set number
+
+" set folding method
+set foldmethod=indent
+set foldcolumn=1
+set foldlevel=99
 
 highlight LineNr term=bold cterm=NONE ctermfg=brown ctermbg=NONE gui=NONE guifg=brown guibg=NONE
 
@@ -83,38 +89,38 @@ set splitright
 set directory=~/.backup,/tmp
 set backupdir=~/.backup,/tmp
 
-" add some automatic bracket and such fun
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap } <c-r>=ClosePair('}')<CR>
-inoremap " <c-r>=QuoteDelim('"')<CR>
-inoremap ' <c-r>=QuoteDelim("'")<CR>
-
-function ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char
-    endif
-endf
-
-function QuoteDelim(char)
-    let line = getline('.')
-    let col = col('.')
-    if line[col - 2] == "\\"
-        "Inserting a quoted quotation mark into the string
-        return a:char
-    elseif line[col - 1] == a:char
-        "Escaping out of the string
-        return "\<Right>"
-    else
-        "Starting a string
-        return a:char.a:char."\<Esc>i"
-    endif
-endf
-
+" " add some automatic bracket and such fun
+" inoremap ( ()<Esc>i
+" inoremap [ []<Esc>i
+" inoremap { {}<Esc>i
+" inoremap " ""<Esc>i
+" inoremap ' ''<Esc>i
+" inoremap ) <c-r>=ClosePair(')')<CR>
+" inoremap ] <c-r>=ClosePair(']')<CR>
+" inoremap } <c-r>=ClosePair('}')<CR>
+" inoremap " <c-r>=QuoteDelim('"')<CR>
+" inoremap ' <c-r>=QuoteDelim("'")<CR>
+"
+" function ClosePair(char)
+"     if getline('.')[col('.') - 1] == a:char
+"         return "\<Right>"
+"     else
+"         return a:char
+"     endif
+" endf
+"
+" function QuoteDelim(char)
+"     let line = getline('.')
+"     let col = col('.')
+"     if line[col - 2] == "\\"
+"         "Inserting a quoted quotation mark into the string
+"         return a:char
+"     elseif line[col - 1] == a:char
+"         "Escaping out of the string
+"         return "\<Right>"
+"     else
+"         "Starting a string
+"         return a:char.a:char."\<Esc>i"
+"     endif
+" endf
+"
