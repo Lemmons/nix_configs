@@ -19,6 +19,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Align'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/openscad.vim'
+Plugin 'tpope/vim-abolish'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

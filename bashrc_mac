@@ -165,3 +165,9 @@ if [ ! -f ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then
     ./install.sh
     cd ~
 fi
+
+# added by travis gem
+[ -f /Users/slemmon/.travis/travis.sh ] && source /Users/slemmon/.travis/travis.sh
+
+#init rbenv
+eval "$(rbenv init -)"
