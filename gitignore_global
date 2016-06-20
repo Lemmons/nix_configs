@@ -6,3 +6,6 @@
 
 # ignore pytyon virtual environment
 ve/
+
+# ignore .cache folders
+.cache/

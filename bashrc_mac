@@ -26,8 +26,6 @@ shopt -s checkwinsize
 
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
-# cache pip-installed packages to avoid re-downloading
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -174,3 +172,12 @@ eval "$(rbenv init -)"
 
 #init thefuck
 eval "$(thefuck --alias)"
+
+# add /usr/local/sbin to path
+PATH=$PATH:/usr/local/sbin
+
+# pyenv auto-completion
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# nodenv auto-completion
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi

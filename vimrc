@@ -73,6 +73,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" leader mappings
+noremap <leader>Pdb <S-o>import pytest; pytest.set_trace()<Esc>
+noremap <leader>pdb oimport pytest; pytest.set_trace()<Esc>
+
 " split key mappings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
