@@ -159,3 +159,6 @@ mkdir -p .backup
 # fi
 
 touch ~/.vim/python
+
+# support for thefuck
+eval $(thefuck --alias)
