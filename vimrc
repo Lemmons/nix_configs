@@ -20,6 +20,10 @@ Plugin 'Align'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/openscad.vim'
 Plugin 'tpope/vim-abolish'
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plugin 'majutsushi/tagbar'
+" Plugin 'xolox/vim-misc'
+" Plugin 'xolox/vim-easytags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -75,7 +79,12 @@ set expandtab
 
 " leader mappings
 noremap <leader>Pdb <S-o>import pytest; pytest.set_trace()<Esc>
-noremap <leader>pdb oimport pytest; pytest.set_trace()<Esc>
+noremap <leader>pdb oimport Pytest; pytest.set_trace()<Esc>
+
+" tag key mappings
+nmap <F10> :TagbarToggle<CR>
+nmap <F9> <C-]>
+nmap <C-\> <C-W><C-]>
 
 " split key mappings
 nnoremap <C-J> <C-W><C-J>
@@ -106,38 +115,5 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" " add some automatic bracket and such fun
-" inoremap ( ()<Esc>i
-" inoremap [ []<Esc>i
-" inoremap { {}<Esc>i
-" inoremap " ""<Esc>i
-" inoremap ' ''<Esc>i
-" inoremap ) <c-r>=ClosePair(')')<CR>
-" inoremap ] <c-r>=ClosePair(']')<CR>
-" inoremap } <c-r>=ClosePair('}')<CR>
-" inoremap " <c-r>=QuoteDelim('"')<CR>
-" inoremap ' <c-r>=QuoteDelim("'")<CR>
-"
-" function ClosePair(char)
-"     if getline('.')[col('.') - 1] == a:char
-"         return "\<Right>"
-"     else
-"         return a:char
-"     endif
-" endf
-"
-" function QuoteDelim(char)
-"     let line = getline('.')
-"     let col = col('.')
-"     if line[col - 2] == "\\"
-"         "Inserting a quoted quotation mark into the string
-"         return a:char
-"     elseif line[col - 1] == a:char
-"         "Escaping out of the string
-"         return "\<Right>"
-"     else
-"         "Starting a string
-"         return a:char.a:char."\<Esc>i"
-"     endif
-" endf
-"
+" Setup some ctags stuff
+filetype on
