@@ -152,10 +152,10 @@ mkdir -p .backup
 # setup vim extensions
 # vim +PluginInstall +qall
 
-if [ ! -f ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then
-    cd ~/.vim/bundle/YouCompleteMe
-    ./install.sh
-    cd ~
-fi
+# if [ ! -f ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then
+#     cd ~/.vim/bundle/YouCompleteMe
+#     ./install.sh
+#     cd ~
+# fi
 
 touch ~/.vim/python
